@@ -166,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             RequestBody tituloPart = RequestBody.create(MultipartBody.FORM, titulo);
             RequestBody descripcionPart = RequestBody.create(MultipartBody.FORM, descripcion);
-            RequestBody usuarios_idPart = RequestBody.create(MultipartBody.FORM, descripcion);
+            RequestBody usuarios_idPart = RequestBody.create(MultipartBody.FORM, usuarios_id);
 
 
 

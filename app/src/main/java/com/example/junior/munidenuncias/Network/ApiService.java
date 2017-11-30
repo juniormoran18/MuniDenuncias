@@ -25,8 +25,11 @@ public interface ApiService {
     @GET("api/v1/denuncias")
     Call<List<Denuncia>> getDenuncias();
 
-    @POST("api/v1/usuarios")
-    Call<User> loginUser();
+    @FormUrlEncoded
+    @POST("api/v1/login")
+    Call<User> loginUser(@Field("username")String username,
+                         @Field("password")String password);
+
 
     @FormUrlEncoded
     @POST("/api/v1/denuncias")
@@ -38,7 +41,6 @@ public interface ApiService {
     Call<ResponseMessage> createDenunciaWithImage(
             @Part("titulo") RequestBody titulo,
             @Part("descripcion") RequestBody descripcion,
-
             @Part MultipartBody.Part imagen,
             @Part("usuarios_id") RequestBody usuarios_id
     );
